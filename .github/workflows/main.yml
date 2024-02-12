@@ -5,7 +5,7 @@ jobs:
    runs-on: ubuntu-latest
    steps: 
      - name: Checkout Repo
-       uses: actions/checkout@v1
+       uses: actions/checkout@main
      - name: Setup Python
        uses: actions/setup-python@v4
        with: 
@@ -18,11 +18,10 @@ jobs:
        run: python feed.py
      - name: Push repo
        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
+          git config user.name mathewmeenu10
+          git config user.email mathewmeenu10@gmail.com
           git add .
           git commit -m "Modified feed"
-          git checkout main
           git push
           
       

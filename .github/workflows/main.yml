@@ -6,22 +6,24 @@ jobs:
    steps: 
      - name: Checkout Repo
        uses: actions/checkout@main
-     - name: Setup Python
-       uses: actions/setup-python@v4
-       with: 
-         python-version: '3.10'
-     - name: Install dependencies
-       run: |
-          python -m pip install --upgrade pip
-          pip install pyyaml
      - name: Run feed generator
-       run: python feed.py
-     - name: Push repo
-       run: |
-          git config user.name mathewmeenu10
-          git config user.email mathewmeenu10@gmail.com
-          git add .
-          git commit -m "Modified feed"
-          git push
+       uses: mathewmeenu10/podcast-generator@main
+     # - name: Setup Python
+     #   uses: actions/setup-python@v4
+     #   with: 
+     #     python-version: '3.10'
+     # - name: Install dependencies
+     #   run: |
+     #      python -m pip install --upgrade pip
+     #      pip install pyyaml
+     # - name: Run feed generator
+     #   run: python feed.py
+     # - name: Push repo
+     #   run: |
+     #      git config user.name mathewmeenu10
+     #      git config user.email mathewmeenu10@gmail.com
+     #      git add .
+     #      git commit -m "Modified feed"
+     #      git push
           
       
